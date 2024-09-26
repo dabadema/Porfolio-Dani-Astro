@@ -9,7 +9,8 @@ const THEMES = ["Light", "Dark", "System"]
 <div class="relative ml-1 mr-1">
   <button
     id="theme-toggle-btn"
-    class="appearance-none border-none flex hover:scale-110 transition hover:text-yellow-500 hover:bg-white/20 rounded-full"
+    class="appearance-none border-none flex transition rounded-full p-1.5
+    hover:scale-110  hover:text-yellow-500 hover:bg-white/20"
   >
     <span class="sr-only">Elige el tema</span>
     <SunIcon id="light" class="theme-toggle-icon size-5 transition-all" />
@@ -24,15 +25,15 @@ const THEMES = ["Light", "Dark", "System"]
   </button>
   <div
     id="themes-menu"
-    class="absolute hidden scale-180 top-8 right-0 text-sm text-center p-1 min-w-[4rem] rounded-2xl border border-gray-100 bg-white/90 
-    dark:bg-gray-900/90 dark:border-gray-500/20 
+    class="absolute hidden scale-180 top-9 right-0 text-sm text-center p-1 min-w-[4rem] rounded-2xl border border-gray-100 bg-white/90 
+    dark:bg-white/10 dark:backdrop-blur-2xl  dark:border-gray-500/20 
     shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md "
   >
     <ul>
       {
         THEMES.map((theme) => (
           <li class="themes-menu-option px-2 py-1.5 cursor-default 
-          hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 hover:text-yellow-500 
+          hover:bg-white/30 hover:text-yellow-500  dark:hover:bg-gray-500/50 
           rounded-full">
             {theme}
           </li>

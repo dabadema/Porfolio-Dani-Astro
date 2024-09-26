@@ -25,17 +25,19 @@ const navItems = [
 ]
 ---
 
+<!-- TODO Check the header on light theme -->
+
 <header
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+    class="flex gap-2 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
   >
     {
       navItems.map((link) => (
         <a
           class="relative block px-2 py-2
-           hover:text-yellow-500 hover:bg-white/20 hover:rounded-full 
+           hover:text-yellow-500 hover:bg-white/30 hover:rounded-full 
            dark:hover:text-yellow-400"
           aria-label={link.label}
           href={link.url}
@@ -104,7 +106,7 @@ const navItems = [
   }
 
   nav a.active {
-    @apply text-yellow-500 dark:text-yellow-400 bg-white/30 rounded-full;
+    @apply text-yellow-400 dark:text-yellow-400 bg-white/30 rounded-full;
   }
 
 </style>
