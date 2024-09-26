@@ -3,7 +3,7 @@ import ThemeToggle from "./ThemeToggle.astro"
 
 const navItems = [
   {
-    title: "Experienciaaaa",
+    title: "Experiencia",
     label: "experiencia",
     url: "/#experiencia",
   },
@@ -20,7 +20,7 @@ const navItems = [
   {
     title: "Contacto",
     label: "contacto",
-    url: "mailto:gloriacastillog1696@gmail.com",
+    url: "mailto:dabadema7@hotmail.com",
   },
 ]
 ---
@@ -34,7 +34,9 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          class="relative block px-2 py-2
+           hover:text-yellow-500 hover:bg-white/20 hover:rounded-full 
+           dark:hover:text-yellow-400"
           aria-label={link.label}
           href={link.url}
         >
@@ -47,7 +49,7 @@ const navItems = [
 </header>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
+    document.addEventListener("astro:page-load", () => {
     const sections = document.querySelectorAll("section")
     const navItems = document.querySelectorAll("header nav a")
 
@@ -56,9 +58,9 @@ const navItems = [
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500")
+              item.classList.add("active")
             } else {
-              item.classList.remove("text-yellow-500")
+              item.classList.remove("active")
             }
           })
         }
@@ -90,14 +92,19 @@ const navItems = [
 
 <style>
   nav {
-    animation: nav-shadown 1s linear both;
+    animation: nav-blur 1s linear both;
     animation-timeline: scroll();
-    animation-range: 0 100px;
+    animation-range: 0 1000px;
   }
 
-  @keyframes nav-shadown {
+  @keyframes nav-blur {
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+      @apply backdrop-blur-sm bg-white/10 dark:bg-gray-800/10 shadow-lg;
     }
   }
+
+  nav a.active {
+    @apply text-yellow-500 dark:text-yellow-400 bg-white/30 rounded-full;
+  }
+
 </style>
