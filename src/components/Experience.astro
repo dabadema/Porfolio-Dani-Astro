@@ -1,0 +1,24 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro";
+const EXPERIENCIE = [
+  {
+    date: "Marzo 2024 - Junio 2024",
+    title: "Prácticas en Desarrollo de Aplicaciones Web",
+    company: "Miga Marketing Web ",
+    description:
+      "Planificación y desarrollo de aplicaciones de gestión de datos de compañías del sector eléctrico. (MySQL, Java, Springboot, Javascript, React)"
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
+
+
