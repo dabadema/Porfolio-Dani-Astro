@@ -4,13 +4,14 @@ import Badge from "../components/Badge.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import MailIcon from "../components/icons/Mail.astro";
 import SocialPill from "../components/SocialPill.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
 ---
 
-<div class="max-w-2xl ">
+<div class="max-w-xl ">
   <div class="flex gap-4 mb-4 justify-center">
     <img
       class="rounded-full shadow-lg size-20"
-      src="/unnamed.jpg"
+      src="/Perfil-DBM_optimized.webp"
       alt={personalImageAlt}
     />
     <a
@@ -33,19 +34,23 @@ import SocialPill from "../components/SocialPill.astro";
     dark:[&>strong]:text-yellow-200  dark:text-gray-300
     [&>strong]:text-yellow-500 [&>strong]:font-semibold"
   >
-    Titulado en el Ciclo Superior de Desarrollo de Aplicaciones Web. <strong
-      >Desarrollador/Programador Web y Gestor de proyectos</strong
-    > de Sevilla, España. Especializada en el desarrollo de aplicaciones web
-    únicas.
+    Entusiasta apasionado del mundo de las tecnologías. 
+    <strong>Programador Web y Gestor de proyectos,</strong
+    > de Sevilla, España. Trabajo en equipo, servicio y calidad como valores.
   </p>
-  <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:gloriacastillog1696@gmail.com">
-      <MailIcon class="size-4" />
-      gloriacastillog1696@gmail.com
-    </SocialPill>
-    <SocialPill href="https://www.linkedin.com/in/gloria-castillo-gonz%C3%A1lez-3286a2123/">
-      <LinkedInIcon class="size-4" />
+  <nav class="flex flex-wrap gap-3 mt-6 justify-center">
+    <SocialPill href="https://www.linkedin.com/in/dbaenademadariaga/">
+      <LinkedInIcon class="size-5" />
       LinkedIn
     </SocialPill>
+    <SocialPill href="https://github.com/dbaenademadariaga">
+      <GitHubIcon class="size-5" />
+      GitHub
+    </SocialPill>
+    <SocialPill href="mailto:dabadema7@hotmail.com">
+      <MailIcon class="size-5" />
+      dabadema7@hotmail.com
+    </SocialPill>
+   
   </nav>
 </div>
