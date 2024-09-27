@@ -27,7 +27,8 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
   <h1
     class="text-4xl text-center font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
-    Hola, soy Dani 👋🏽
+<!-- TODO Generate CSS animation to this text -->
+    <span id="typewriter"></span> 
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 text-pretty
@@ -54,3 +55,71 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
    
   </nav>
 </div>
+
+<style>
+  @keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  #typewriter::after {
+    content: '|';
+    animation: blink 0.9s infinite;
+  }
+</style>
+<script>
+  function typeWriter(text: string, i: number = 0, stage: number = 0) {
+    const typewriterElement = document.getElementById("typewriter");
+    if (!typewriterElement) return;
+
+    const correctPrefix = "Hola, soy Da";
+    const mistakeText = "badem...?";
+    const fullText = text;
+
+    // Function to write the intro like a typewriter
+    switch (stage) {
+      case 0: 
+        if (i < correctPrefix.length) {
+          typewriterElement.textContent = correctPrefix.slice(0, i + 1);
+          i++;
+          setTimeout(() => typeWriter(text, i, 0), 100);
+        } else {
+          setTimeout(() => typeWriter(text, 0, 1), 100);
+        }
+        break;
+
+      case 1: 
+        if (i < mistakeText.length) {
+          typewriterElement.textContent = correctPrefix + mistakeText.slice(0, i + 1);
+          i++;
+          setTimeout(() => typeWriter(text, i, 1), 100);
+        } else {
+          setTimeout(() => typeWriter(text, mistakeText.length, 2), 1000);
+        }
+        break;
+
+      case 2:
+        if (i > 0) {
+          typewriterElement.textContent = correctPrefix + mistakeText.slice(0, i - 1);
+          i--;
+          setTimeout(() => typeWriter(text, i, 2), 50);
+        } else {
+          setTimeout(() => typeWriter(text, correctPrefix.length, 3), 200);
+        }
+        break;
+
+      case 3: 
+        if (i < fullText.length) {
+          typewriterElement.textContent = fullText.slice(0, i + 1);
+          i++;
+          setTimeout(() => typeWriter(text, i, 3), 100);
+        }
+        break;
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    typeWriter("Hola, soy Dani !");
+  });
+</script>
