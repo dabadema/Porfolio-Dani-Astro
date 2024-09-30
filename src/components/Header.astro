@@ -1,4 +1,5 @@
 ---
+import DBIcon from "./icons/DBIcon.astro"
 import ThemeToggle from "./ThemeToggle.astro"
 
 const navItems = [
@@ -33,6 +34,7 @@ const navItems = [
   <nav
     class="flex gap-2 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
   >
+  <DBIcon class="size-8 ml-2 mr-60"/>
     {
       navItems.map((link) => (
         <a
