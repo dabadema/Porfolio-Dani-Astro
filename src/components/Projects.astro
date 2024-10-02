@@ -13,6 +13,7 @@ import Docker from "./icons/Docker.astro";
 import JWT from "./icons/JWT.astro";
 import Vercel from "./icons/Vercel.astro";
 import PostgreSQL from "./icons/PostgreSQL.astro";
+import TypescriptIcon from "./icons/TypescriptIcon.astro";
 
 const TAGS = {
   REACT: {
@@ -25,6 +26,12 @@ const TAGS = {
     name: "Vite",
     class: "bg-black text-white",
     icon: Vite,
+  },
+
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-black text-white",
+    icon: TypescriptIcon, 
   },
 
   REDUX: {
@@ -46,11 +53,6 @@ const TAGS = {
     icon: GitHub,
   },
 
-  MATERIALUI: {
-    name: "MaterialUI",
-    class: "bg-black text-white",
-    icon: MaterialUI,
-  },
 
   JAVA: {
     name: "Java",
@@ -104,7 +106,7 @@ const PROJECTS = [
     github: "https://github.com/Casglez3/App-peliculas-backend",
     image: "/projects/app-peliculas3.webp",
     image2: "/projects/app-peliculas2.webp",
-    tags: [TAGS.VITE, TAGS.REACT, TAGS.REDUX, TAGS.SPRINGBOOT, TAGS.GITHUB, TAGS.MATERIALUI, TAGS.JAVA, TAGS.JAVASCRIPT, TAGS.DOCKER, TAGS.JWT, TAGS.VERCEL, TAGS.POSTGRESQL],
+    tags: [TAGS.VITE, TAGS.REACT, TAGS.REDUX, TAGS.SPRINGBOOT, TAGS.GITHUB, TAGS.JAVA, TAGS.JAVASCRIPT, TAGS.DOCKER, TAGS.JWT, TAGS.VERCEL, TAGS.POSTGRESQL],
     github2: "https://github.com/Casglez3/App-peliculas-frontend",
   },
 
@@ -124,7 +126,7 @@ const PROJECTS = [
         link: 'https://cryptocurrentapp.netlify.app/',
         codigo: 'https://github.com/dabadema/React-y-Typescript/tree/main/crypto-react-typescript',
         image: './projects/crypto_screenshot_reduced.webp',
-        tags: [TAGS.REACT, TAGS.VITE],
+        tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.VITE],
         // [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.ZOD, TAGS.VITE],
     },
 ];
