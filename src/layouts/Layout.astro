@@ -33,9 +33,12 @@ const { description, title } = Astro.props
       dark:bg-[radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
     >
     </div>
-    <Header />
-      <slot />
-    <Footer />
+    <div class="space-y-44 mb-2">
+      <Header />
+       <slot />
+      <Footer />
+    </div>
+    
 
     <style is:global>
       :root {
