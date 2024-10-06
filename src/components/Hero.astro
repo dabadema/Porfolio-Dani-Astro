@@ -1,6 +1,5 @@
 ---
 const personalImageAlt = "Daniel Baena"
-import Badge from "../components/Badge.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import MailIcon from "../components/icons/Mail.astro";
 import SocialPill from "../components/SocialPill.astro";
@@ -30,7 +29,7 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
     <span id="typewriter"></span> 
   </h1>
   <p
-    class="mt-6 text-xl text-gray-800 text-pretty
+    class="mt-6 text-xl text-gray-800 text-pretty text-center
     dark:[&>strong]:text-yellow-200  dark:text-gray-300
     [&>strong]:text-yellow-500 [&>strong]:font-semibold"
   >
@@ -40,16 +39,16 @@ import GitHubIcon from "./icons/GitHubIcon.astro";
   </p>
   <nav class="flex flex-wrap gap-3 mt-6 justify-center">
     <SocialPill href="https://www.linkedin.com/in/dbaenademadariaga/">
-      <LinkedInIcon class="size-5" />
+      <LinkedInIcon class="size-4" />
       LinkedIn
     </SocialPill>
     <SocialPill href="https://github.com/dbaenademadariaga">
-      <GitHubIcon class="size-5" />
+      <GitHubIcon class="size-4" />
       GitHub
     </SocialPill>
     <SocialPill href="mailto:dabadema7@hotmail.com">
-      <MailIcon class="size-5" />
-      dabadema7@hotmail.com
+      <MailIcon class="size-4" />
+      Email
     </SocialPill>
    
   </nav>
