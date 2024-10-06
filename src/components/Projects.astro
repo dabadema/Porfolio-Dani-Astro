@@ -6,7 +6,6 @@ import SpringBoot from "./icons/SpringBoot.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 import GitHub from "./icons/GitHub.astro";
-import MaterialUI from "./icons/MaterialUI.astro";
 import Java from "./icons/Java.astro";
 import JavaScript from "./icons/JavaScript.astro";
 import Docker from "./icons/Docker.astro";
@@ -110,11 +109,11 @@ const PROJECTS = [
       "Creado en JavaScript con React, brindando una interfaz dinámica y responsiva. Integración con API externa para actualizaciones constantes de la base de datos de películas. Uso de Material UI para una experiencia visual consistente. Gestión de estado eficiente con Redux, mejorando la experiencia del usuario.",
     ],
     link: "https://app-peliculas-frontend.vercel.app/",
-    github: "https://github.com/Casglez3/App-peliculas-backend",
+    backend: "https://github.com/Casglez3/App-peliculas-backend",
     image: "/projects/app-peliculas3.webp",
     image2: "/projects/app-peliculas2.webp",
     tags: [TAGS.VITE, TAGS.REACT, TAGS.REDUX, TAGS.SPRINGBOOT, TAGS.GITHUB, TAGS.JAVA, TAGS.JAVASCRIPT, TAGS.DOCKER, TAGS.JWT, TAGS.VERCEL, TAGS.POSTGRESQL],
-    github2: "https://github.com/Casglez3/App-peliculas-frontend",
+    frontend: "https://github.com/Casglez3/App-peliculas-frontend",
   },
   {
     title: 'CryptoCurrent App',
@@ -130,7 +129,7 @@ const PROJECTS = [
 <div class="flex flex-col gap-y-24">
   {
     PROJECTS.map(
-      ({ image, title, description, tags, link, github, github2, codigo, image2 }) => (
+      ({ image,  image2, title, description, tags, link, backend, frontend, codigo, }) => (
         <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
           <div class="w-full md:w-1/2 flex flex-col gap-4">
             {/* Tarjeta para la primera imagen */}
@@ -191,8 +190,8 @@ const PROJECTS = [
 
               
               <footer class="flex items-end justify-start mt-4 gap-x-4">
-                {github && (
-                  <LinkButton href={github}>
+                {backend && (
+                  <LinkButton href={backend}>
                     <GitHub class="size-6" />
                     Backend
                   </LinkButton>
@@ -205,8 +204,8 @@ const PROJECTS = [
                   </LinkButton>
                 )}
 
-                {github2 && (
-                  <LinkButton href={github2}>
+                {frontend && (
+                  <LinkButton href={frontend}>
                     <GitHub class="size-5" />
                     Frontend
                   </LinkButton>
