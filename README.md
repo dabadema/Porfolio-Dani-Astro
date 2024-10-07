@@ -1,54 +1,50 @@
-# Astro Starter Kit: Basics
+# 🚀 Portfolio de Dani Baena | Desarrollador FullStack
 
-```sh
-npm create astro@latest -- --template basics
-```
+![Banner de Dani Baena](https://github.com/user-attachments/assets/4f3a138e-c1aa-42ba-b7c6-6145044efb17)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 👨‍💻 Sobre mí
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+¡Hola! Soy Dani, apasionado desarrollador FullStack con experiencia en crear soluciones web innovadoras y eficientes. Me encanta enfrentar nuevos desafíos y aprender constantemente sobre las últimas tecnologías. Mas inclinado hacia el desarrollo frontend pero disfruto cualquier tecnología con la que se presente el siguiente reto!
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🛠️ Habilidades Técnicas
 
-## 🚀 Project Structure
+-   **Frontend:** HTML5, CSS3, Tailwind Css, JavaScript (ES6+), TypeScript, React, Vite
+-   **Backend:** Node.js, Express, NestJS, Python, TypeORM
+-   **Bases de Datos:** PostgreSQL, MongoDB, MySQL
+-   **DevOps:** Docker, AWS, Google Cloud, CI/CD
+-   **Otras:** Git, RESTful APIs, GraphQL
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🏆 Proyectos Destacados
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### [CryptoCurrentApp](https://cryptocurrentapp.netlify.app/)
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Comprueba facilmente el precio actual de las principales criptomonedas, en tiempo real, en cualquier de las principales monedas del mundo.
+Desarrollado usando Vite, React, Typescript, Zod.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 📈 Estadísticas de GitHub
 
-Any static assets, like images, can be placed in the `public/` directory.
+![Estadísticas de GitHub de Dabadema](https://github-readme-stats.vercel.app/api?username=dabadema&show_icons=true&theme=radical)
 
-## 🧞 Commands
+## 🌱 Actualmente aprendiendo
 
-All commands are run from the root of the project, from a terminal:
+-   Inteligencia Artificial y Machine Learning
+-   Arquitectura de Microservicios
+-   Aprendiendo las últimas tendencias para el desarrollo frontend
+-   Desarrollo de aplicaciones móviles con React Native
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📫 Contacto
 
-## 👀 Want to learn more?
+-   📧 Email: dabadema7@hotmail.com
+-   🔗 LinkedIn: [Dani](https://www.linkedin.com/in/dbaenademadariaga)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 🤝 Contribuciones
+
+¡Las contribuciones son siempre bienvenidas! Si tienes alguna idea o sugerencia, no dudes en abrir un issue o enviar un pull request.
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE.md](LICENSE.md) para más detalles.
+
+---
+
+⭐️ From [dabadema](https://github.com/dabadema)
