@@ -1,6 +1,6 @@
-# 🚀 Portfolio de Dani Baena | Desarrollador FullStack
+# 🚀 Porfolio de Dani Baena | Desarrollador FullStack
 
-![Banner de Dani Baena](https://github.com/user-attachments/assets/4f3a138e-c1aa-42ba-b7c6-6145044efb17)
+<img width="1671" alt="image" src="https://github.com/user-attachments/assets/4732c4dd-9ea8-4139-9c7d-3a33e06b4024">
 
 ## 👨‍💻 Sobre mí
 
