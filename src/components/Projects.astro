@@ -97,7 +97,21 @@ const TAGS = {
   },
   
 };
-const PROJECTS = [
+
+interface Project {
+  title: string;
+  description: string[];
+  link?: string;
+  codigo?: string;
+  image: string;
+  image2?: string;
+  backend?: string;
+  frontend?: string;
+  tags: typeof TAGS[keyof typeof TAGS][];
+}
+
+
+const PROJECTS: Project[] = [
   // {
   //   title: "Aplicación de Películas - Descubre, explora y disfruta del cine (Aplicación en desarrollo)",
   //   description: [
@@ -109,11 +123,12 @@ const PROJECTS = [
   //     "Creado en JavaScript con React, brindando una interfaz dinámica y responsiva. Integración con API externa para actualizaciones constantes de la base de datos de películas. Uso de Material UI para una experiencia visual consistente. Gestión de estado eficiente con Redux, mejorando la experiencia del usuario.",
   //   ],
   //   link: "https://app-peliculas-frontend.vercel.app/",
-  //   backend: "https://github.com/Casglez3/App-peliculas-backend",
+
   //   image: "/projects/app-peliculas3.webp",
   //   image2: "/projects/app-peliculas2.webp",
   //   tags: [TAGS.VITE, TAGS.REACT, TAGS.REDUX, TAGS.SPRINGBOOT, TAGS.GITHUB, TAGS.JAVA, TAGS.JAVASCRIPT, TAGS.DOCKER, TAGS.JWT, TAGS.VERCEL, TAGS.POSTGRESQL],
   //   frontend: "https://github.com/Casglez3/App-peliculas-frontend",
+  //   backend: "https://github.com/Casglez3/App-peliculas-backend",
   // },
   {
     title: 'CryptoCurrent App',
