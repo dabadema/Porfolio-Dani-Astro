@@ -1,0 +1,25 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<h2
+    class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white relative"
+>
+    <slot name="icon" />
+    <span class="relative inline-block">
+        {title}
+        <span
+            class="absolute left-0 bottom-2 w-full h-3"
+            style={{
+                background: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 424 24' fill='none'%3E%3Cpath d='M6 14.5c68.5-3.5 137-3.5 205.5-3.5 71.2 0 137.7 0 206.5 4 1.5-2.5 2.5-4.7 3-6.7.5-2-1-4.3-2-5.8-2.5 0-5 1.5-7.5 2-68.8-4 -137.3-4-206.5-4C137 .5 68.5.5 0 4c2 3.3 4 7 6 10.5z' fill='%23FCD34D' fill-opacity='0.6'/%3E%3C/svg%3E")`,
+                backgroundSize: '100% 100%',
+                backgroundRepeat: 'no-repeat',
+                zIndex: -1,
+                transform: 'rotate(-1deg)',
+            }}></span>
+    </span>
+</h2>
