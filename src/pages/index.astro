@@ -1,70 +1,55 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import Layout from '../layouts/Layout.astro';
 
-import AboutMe from "../components/AboutMe.astro"
-import Contact from "../components/Contact.astro"
-import Briefcase from "../components/icons/BriefCase.astro"
-import CodeIcon from "../components/icons/Code.astro"
-import Experience from "../components/Experience.astro"
-import ProfileCheck from "../components/icons/ProfileCheck.astro"
-import Projects from "../components/Projects.astro"
-import SectionContainer from "../components/SectionContainer.astro"
-import Hero from "../components/Hero.astro"
-import ContactIcon from "../components/icons/ContactIcon.astro"
+import AboutMe from '../components/AboutMe.astro';
+import Contact from '../components/Contact.astro';
+import Briefcase from '../components/icons/BriefCase.astro';
+import CodeIcon from '../components/icons/Code.astro';
+import Experience from '../components/Experience.astro';
+import ProfileCheck from '../components/icons/ProfileCheck.astro';
+import Projects from '../components/Projects.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Hero from '../components/Hero.astro';
+import ContactIcon from '../components/icons/ContactIcon.astro';
+import SectionTitle from '../components/SectionTitle.astro';
 ---
 
 <Layout
-  title="Porfolio de Dani - Desarrollador y programador Web - Gestor de proyectos"
-  description="Apasionado del desarrollo de software, con sólidos conocimientos en tecnologías front-end y back-end. Especializado en la gestión de proyectos y la creación de aplicaciones web modernas."
+    title="Porfolio de Dani - Desarrollador y programador Web - Gestor de proyectos"
+    description="Apasionado del desarrollo de software, con sólidos conocimientos en tecnologías front-end y back-end. Especializado en la gestión de proyectos y la creación de aplicaciones web modernas."
 >
-  <main class="space-y-24 px-4">
-    <SectionContainer class="xl:py-40 sm:py-32 flex justify-center">
-      <Hero>
-        </slot>
-      </Hero>
-    </SectionContainer>
-    <div class="space-y-32">
-    <SectionContainer id="experiencia">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
-        <Briefcase class="size-8" />
-        Experiencia laboral
-      </h2>
-      <Experience />
-    </SectionContainer>
+    <main class="space-y-24 px-4">
+        <SectionContainer class="xl:py-40 sm:py-32 flex justify-center">
+            <Hero />
+        </SectionContainer>
+    </main>
+    <div class="space-y-32 px-4">
+        <SectionContainer id="experiencia">
+            <SectionTitle title="Experiencia laboral">
+                <Briefcase slot="icon" class="size-8" />
+            </SectionTitle>
+            <Experience />
+        </SectionContainer>
 
-    <SectionContainer id="proyectos">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
-        <CodeIcon class="size-7" />
-        Proyectos
-      </h2>
-      <Projects />
-    </SectionContainer>
+        <SectionContainer id="proyectos">
+            <SectionTitle title="Proyectos">
+                <CodeIcon slot="icon" class="size-7" />
+            </SectionTitle>
+            <Projects />
+        </SectionContainer>
 
-    <SectionContainer id="sobre-mi">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
-        <ProfileCheck class="size-8" />
-        Sobre mí
-      </h2>
-      <AboutMe />
-    </SectionContainer>
+        <SectionContainer id="sobre-mi">
+            <SectionTitle title="Sobre mí">
+                <ProfileCheck slot="icon" class="size-8" />
+            </SectionTitle>
+            <AboutMe />
+        </SectionContainer>
 
-    <SectionContainer id="contacto">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white
-        "
-      >
-        <ContactIcon class="size-8" />
-        Contacto
-      </h2>
-      <Contact />
-    </SectionContainer>
-
-  </div>
-  </main>
+        <SectionContainer id="contacto">
+            <SectionTitle title="Contacto">
+                <ContactIcon slot="icon" class="size-8" />
+            </SectionTitle>
+            <Contact />
+        </SectionContainer>
+    </div>
 </Layout>
