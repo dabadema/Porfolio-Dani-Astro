@@ -6,22 +6,22 @@ const navItems = [
     {
         title: 'Experiencia',
         label: 'experiencia',
-        url: '/#experiencia',
+        url: '#experiencia',
     },
     {
         title: 'Proyectos',
         label: 'proyectos',
-        url: '/#proyectos',
+        url: '#proyectos',
     },
     {
         title: 'Sobre mí',
         label: 'sobre-mi',
-        url: '/#sobre-mi',
+        url: '#sobre-mi',
     },
     {
         title: 'Contacto',
         label: 'contacto',
-        url: '/#contacto',
+        url: '#contacto',
     },
 ];
 ---
@@ -99,6 +99,25 @@ const navItems = [
         const menuToggle = document.getElementById('menu-toggle');
         const dropdownMenu = document.getElementById('dropdown-menu');
         const menuIcon = document.querySelector('.menu-icon');
+
+        // Añadir manejo de eventos para los enlaces de navegación
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        navLinks.forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href') || '';
+                const targetId = href.replace('/', '');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+
+                // Cerrar el menú desplegable si está abierto
+                dropdownMenu?.classList.add('hidden');
+                menuIcon?.classList.remove('open');
+            });
+        });
 
         menuToggle?.addEventListener('click', () => {
             dropdownMenu?.classList.toggle('hidden');
