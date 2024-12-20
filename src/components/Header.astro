@@ -1,112 +1,170 @@
 ---
-import DBIcon from "./icons/DBIcon.astro"
-import ThemeToggle from "./ThemeToggle.astro"
+import DBIcon from './icons/DBIcon.astro';
+import ThemeToggle from './ThemeToggle.astro';
 
 const navItems = [
-  {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
-  },
-  {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
-  },
-  {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
-  },
-  {
-    title: "Contacto",
-    label: "contacto",
-    url: "/#contacto",
-  },
-]
+    {
+        title: 'Experiencia',
+        label: 'experiencia',
+        url: '/#experiencia',
+    },
+    {
+        title: 'Proyectos',
+        label: 'proyectos',
+        url: '/#proyectos',
+    },
+    {
+        title: 'Sobre mí',
+        label: 'sobre-mi',
+        url: '/#sobre-mi',
+    },
+    {
+        title: 'Contacto',
+        label: 'contacto',
+        url: '/#contacto',
+    },
+];
 ---
 
-<header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
->
-  <nav
-    class="flex gap-2 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
-  >
-  <DBIcon class="size-8 ml-2 xl:mr-60 sm:mr-0"/>
-    {
-      navItems.map((link) => (
-        <a
-          class="relative block px-2 py-2
-           hover:text-yellow-500 hover:bg-white/30 hover:rounded-full 
-           dark:hover:text-yellow-400"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
-      ))
-    }
-    <ThemeToggle />
-  </nav>
+<header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
+    <!-- Contenedor principal -->
+    <div
+        class="flex items-center justify-between w-[60%] max-w-screen-lg px-4 rounded-full animate-nav-blur"
+    >
+        <!-- Grupo del logo -->
+        <div class="w-20 flex items-center justify-start">
+            <DBIcon class="size-8" />
+        </div>
+
+        <!-- Grupo del navbar -->
+        <div class="flex items-center justify-center">
+            <!-- Menú para pantallas grandes -->
+            <nav
+                class="hidden sm:flex gap-4 text-sm font-medium text-gray-600 dark:text-gray-200 items-center"
+            >
+                {
+                    navItems.map((link) => (
+                        <a
+                            class="relative block px-4 py-2
+               hover:text-yellow-500 hover:bg-white/30 hover:rounded-full 
+               dark:hover:text-yellow-400"
+                            aria-label={link.label}
+                            href={link.url}
+                        >
+                            {link.title}
+                        </a>
+                    ))
+                }
+                <ThemeToggle />
+            </nav>
+
+            <!-- Menú desplegable y botón para pantallas pequeñas -->
+            <div class="sm:hidden flex items-center">
+                <button
+                    id="menu-toggle"
+                    class="px-4 py-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:text-yellow-500 hover:bg-white/30 hover:rounded-full
+               dark:hover:text-yellow-400"
+                    "
+                    aria-label="Toggle menu"
+                >
+                    ☰
+                </button>
+
+                <nav
+                    id="dropdown-menu"
+                    class="hidden absolute top-14 right-4 w-30 bg-gray-200 dark:bg-gray-800
+                rounded-lg"
+                >
+                    {
+                        navItems.map((link) => (
+                            <a
+                                class="block px-4 py-2 text-gray-600  hover:text-yellow-500 hover:bg-white/30 hover:rounded-full 
+               dark:hover:text-yellow-400 "
+                                aria-label={link.label}
+                                href={link.url}
+                            >
+                                {link.title}
+                            </a>
+                        ))
+                    }
+                </nav>
+            </div>
+        </div>
+    </div>
 </header>
 
 <script>
-    document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+    document.addEventListener('astro:page-load', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const dropdownMenu = document.getElementById('dropdown-menu');
 
-    const callback = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("active")
-            } else {
-              item.classList.remove("active")
+        menuToggle.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Cierra el menú si se hace clic fuera de él
+        document.addEventListener('click', (event) => {
+            if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.add('hidden');
             }
-          })
-        }
-      })
-    }
+        });
 
-    const observer = new IntersectionObserver(callback, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
-    })
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('header nav a');
 
-    sections.forEach((section) => {
-      observer.observe(section)
-    })
+        const callback = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    navItems.forEach((item) => {
+                        if (item.getAttribute('aria-label') === entry.target.id) {
+                            item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        };
 
-    // Cleanup function
-    document.onvisibilitychange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect()
-      } else {
+        const observer = new IntersectionObserver(callback, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3,
+        });
+
         sections.forEach((section) => {
-          observer.observe(section)
-        })
-      }
-    }
-  })
+            observer.observe(section);
+        });
+
+        // Limpieza
+        document.onvisibilitychange = () => {
+            if (document.visibilityState === 'hidden') {
+                observer.disconnect();
+            } else {
+                sections.forEach((section) => {
+                    observer.observe(section);
+                });
+            }
+        };
+    });
 </script>
 
 <style>
-  nav {
-    animation: nav-blur 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0 1000px;
-  }
-
-  @keyframes nav-blur {
-    to {
-      @apply backdrop-blur-sm bg-white/10 dark:bg-gray-800/10 shadow-lg;
+    /* Animaciones para el contenedor principal */
+    .animate-nav-blur {
+        animation: nav-blur 1s linear both;
+        animation-timeline: scroll();
+        animation-range: 0 1000px;
     }
-  }
 
-  nav a.active {
-    @apply text-yellow-400 dark:text-yellow-400 bg-white/30 rounded-full;
-  }
+    @keyframes nav-blur {
+        to {
+            @apply backdrop-blur-sm bg-white/10 dark:bg-gray-800/10 shadow-lg;
+        }
+    }
 
+    /* Estilos para enlaces activos */
+    nav a.active {
+        @apply text-yellow-400 dark:text-yellow-400 bg-white/30 rounded-full;
+    }
 </style>
