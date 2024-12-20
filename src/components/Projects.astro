@@ -1,242 +1,285 @@
 ---
-import React from "./icons/React.astro";
-import Vite from "./icons/Vite.astro";
-import Redux from "./icons/Redux.astro";
-import SpringBoot from "./icons/SpringBoot.astro";
-import Link from "./icons/Link.astro";
-import LinkButton from "./LinkButton.astro";
-import GitHub from "./icons/GitHub.astro";
-import Java from "./icons/Java.astro";
-import JavaScript from "./icons/JavaScript.astro";
-import Docker from "./icons/Docker.astro";
-import JWT from "./icons/JWT.astro";
-import Vercel from "./icons/Vercel.astro";
-import PostgreSQL from "./icons/PostgreSQL.astro";
-import TypescriptIcon from "./icons/TypescriptIcon.astro";
-import ZodIcon from "./icons/ZodIcon.astro";
+import React from './icons/React.astro';
+import Vite from './icons/Vite.astro';
+import Redux from './icons/Redux.astro';
+import SpringBoot from './icons/SpringBoot.astro';
+import Link from './icons/Link.astro';
+import LinkButton from './LinkButton.astro';
+import GitHub from './icons/GitHub.astro';
+import Java from './icons/Java.astro';
+import JavaScript from './icons/JavaScript.astro';
+import Docker from './icons/Docker.astro';
+import JWT from './icons/JWT.astro';
+import Vercel from './icons/Vercel.astro';
+import PostgreSQL from './icons/PostgreSQL.astro';
+import TypescriptIcon from './icons/TypescriptIcon.astro';
+import ZodIcon from './icons/ZodIcon.astro';
+import Node from './icons/Node.astro';
+import Expressjs from './icons/Expressjs.astro';
+import Tailwindcss from './icons/Tailwindcss.astro';
+import ReactRouter from './icons/ReactRouter.astro';
 
 const TAGS = {
-  REACT: {
-    name: "React.js",
-    class: "bg-black text-white",
-    icon: React,
-  },
+    REACT: {
+        name: 'React.js',
+        class: 'bg-black text-white',
+        icon: React,
+    },
 
-  VITE: {
-    name: "Vite",
-    class: "bg-black text-white",
-    icon: Vite,
-  },
+    VITE: {
+        name: 'Vite',
+        class: 'bg-black text-white',
+        icon: Vite,
+    },
 
-  TYPESCRIPT: {
-    name: "TypeScript",
-    class: "bg-black text-white",
-    icon: TypescriptIcon, 
-  },
+    TYPESCRIPT: {
+        name: 'TypeScript',
+        class: 'bg-black text-white',
+        icon: TypescriptIcon,
+    },
 
-  ZOD: {
-    name: "Zod",
-    class: "bg-black text-white",
-    icon: ZodIcon, 
-  },
+    ZOD: {
+        name: 'Zod',
+        class: 'bg-black text-white',
+        icon: ZodIcon,
+    },
 
-  REDUX: {
-    name: "Redux",
-    class: "bg-black text-white",
-    icon: Redux,
-  },
+    REDUX: {
+        name: 'Redux',
+        class: 'bg-black text-white',
+        icon: Redux,
+    },
 
-  SPRINGBOOT: {
-    name: "SpringBoot",
-    class: "bg-black text-white",
-    icon: SpringBoot,
-  },
+    SPRINGBOOT: {
+        name: 'SpringBoot',
+        class: 'bg-black text-white',
+        icon: SpringBoot,
+    },
 
+    GITHUB: {
+        name: 'GitHub',
+        class: 'bg-black text-white',
+        icon: GitHub,
+    },
 
-  GITHUB: {
-    name: "GitHub",
-    class: "bg-black text-white",
-    icon: GitHub,
-  },
+    JAVA: {
+        name: 'Java',
+        class: 'bg-black text-white',
+        icon: Java,
+    },
 
+    JAVASCRIPT: {
+        name: 'JavaScript',
+        class: 'bg-black text-white',
+        icon: JavaScript,
+    },
 
-  JAVA: {
-    name: "Java",
-    class: "bg-black text-white",
-    icon: Java,
-  },
+    DOCKER: {
+        name: 'Docker',
+        class: 'bg-black text-white',
+        icon: Docker,
+    },
 
-  JAVASCRIPT: {
-    name: "JavaScript",
-    class: "bg-black text-white",
-    icon: JavaScript,
-  },
+    JWT: {
+        name: 'JWT',
+        class: 'bg-black text-white',
+        icon: JWT,
+    },
 
-  DOCKER: {
-    name: "Docker",
-    class: "bg-black text-white",
-    icon: Docker,
-  },
+    VERCEL: {
+        name: 'Vercel',
+        class: 'bg-black text-white',
+        icon: Vercel,
+    },
 
-  JWT: {
-    name: "JWT",
-    class: "bg-black text-white",
-    icon: JWT,
-  },
-
-  VERCEL: {
-    name: "Vercel",
-    class: "bg-black text-white",
-    icon: Vercel,
-  },
-
-  POSTGRESQL: {
-    name: "PostgreSQL",
-    class: "bg-black text-white",
-    icon: PostgreSQL,
-  },
-  
+    POSTGRESQL: {
+        name: 'PostgreSQL',
+        class: 'bg-black text-white',
+        icon: PostgreSQL,
+    },
+    NODE: {
+        name: 'Node',
+        class: 'bg-black text-white',
+        icon: Node,
+    },
+    EXPRESS: {
+        name: 'Express',
+        class: 'bg-black text-white',
+        icon: Expressjs,
+    },
+    TAILWINDCSS: {
+        name: 'TailwindCSS',
+        class: 'bg-black text-white',
+        icon: Tailwindcss,
+    },
+    REACTROUTER: {
+        name: 'RouterDOM',
+        class: 'bg-black text-white',
+        icon: ReactRouter,
+    },
 };
 
 interface Project {
-  title: string;
-  description: string[];
-  link?: string;
-  codigo?: string;
-  image: string;
-  image2?: string;
-  backend?: string;
-  frontend?: string;
-  tags: typeof TAGS[keyof typeof TAGS][];
+    title: string;
+    description: string[];
+    link?: string;
+    codigo?: string;
+    image: string;
+    image2?: string;
+    backend?: string;
+    frontend?: string;
+    tags: (typeof TAGS)[keyof typeof TAGS][];
 }
 
-
 const PROJECTS: Project[] = [
-  // {
-  //   title: "Aplicación de Películas - Descubre, explora y disfruta del cine (Aplicación en desarrollo)",
-  //   description: [
-  //     "Esta aplicación está diseñada para los amantes del cine, proporcionando una plataforma intuitiva para buscar películas, dejar reseñas y mantenerse actualizado con los últimos estrenos.",
-  //     "Tecnologías Utilizadas:",
-  //     "Backend:",
-  //     "Desarrollado en Java con Spring Boot, garantizando rendimiento y escalabilidad. Arquitectura basada en capas: repositorio, servicio y controlador. Implementación de DTOs para manejo eficiente de datos entre frontend y backend. Seguridad gestionada con Spring Boot Security y autenticación con JWT tokens. Base de datos gestionada con PostgreSQL, proporcionando integridad de datos y soporte para consultas complejas. Despliegue en contenedores usando Docker.",
-  //     "Frontend:",
-  //     "Creado en JavaScript con React, brindando una interfaz dinámica y responsiva. Integración con API externa para actualizaciones constantes de la base de datos de películas. Uso de Material UI para una experiencia visual consistente. Gestión de estado eficiente con Redux, mejorando la experiencia del usuario.",
-  //   ],
-  //   link: "https://app-peliculas-frontend.vercel.app/",
+    // {
+    //   title: "Aplicación de Películas - Descubre, explora y disfruta del cine (Aplicación en desarrollo)",
+    //   description: [
+    //     "Esta aplicación está diseñada para los amantes del cine, proporcionando una plataforma intuitiva para buscar películas, dejar reseñas y mantenerse actualizado con los últimos estrenos.",
+    //     "Tecnologías Utilizadas:",
+    //     "Backend:",
+    //     "Desarrollado en Java con Spring Boot, garantizando rendimiento y escalabilidad. Arquitectura basada en capas: repositorio, servicio y controlador. Implementación de DTOs para manejo eficiente de datos entre frontend y backend. Seguridad gestionada con Spring Boot Security y autenticación con JWT tokens. Base de datos gestionada con PostgreSQL, proporcionando integridad de datos y soporte para consultas complejas. Despliegue en contenedores usando Docker.",
+    //     "Frontend:",
+    //     "Creado en JavaScript con React, brindando una interfaz dinámica y responsiva. Integración con API externa para actualizaciones constantes de la base de datos de películas. Uso de Material UI para una experiencia visual consistente. Gestión de estado eficiente con Redux, mejorando la experiencia del usuario.",
+    //   ],
+    //   link: "https://app-peliculas-frontend.vercel.app/",
 
-  //   image: "/projects/app-peliculas3.webp",
-  //   image2: "/projects/app-peliculas2.webp",
-  //   tags: [TAGS.VITE, TAGS.REACT, TAGS.REDUX, TAGS.SPRINGBOOT, TAGS.GITHUB, TAGS.JAVA, TAGS.JAVASCRIPT, TAGS.DOCKER, TAGS.JWT, TAGS.VERCEL, TAGS.POSTGRESQL],
-  //   frontend: "https://github.com/Casglez3/App-peliculas-frontend",
-  //   backend: "https://github.com/Casglez3/App-peliculas-backend",
-  // },
-  {
-    title: 'CryptoCurrent App',
-    description: [ 'Check the current price of the most popular crypto currencies, in real time, in any of the most popular currencies in the world. '],
-    link: 'https://cryptocurrentapp.netlify.app/',
-    codigo: 'https://github.com/dabadema/React-y-Typescript/tree/main/crypto-react-typescript',
-    image: './projects/crypto_screenshot_reduced.webp',
-    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.ZOD, TAGS.VITE],
+    //   image: "/projects/app-peliculas3.webp",
+    //   image2: "/projects/app-peliculas2.webp",
+    //   tags: [TAGS.VITE, TAGS.REACT, TAGS.REDUX, TAGS.SPRINGBOOT, TAGS.GITHUB, TAGS.JAVA, TAGS.JAVASCRIPT, TAGS.DOCKER, TAGS.JWT, TAGS.VERCEL, TAGS.POSTGRESQL],
+    //   frontend: "https://github.com/Casglez3/App-peliculas-frontend",
+    //   backend: "https://github.com/Casglez3/App-peliculas-backend",
+    // },
+    {
+        title: 'CryptoCurrent App',
+        description: [
+            'Comprueba el precio actual de las criptomonedas más populares del mercado en tiempo real en cualquiera de las divisas mas populares del mundo.',
+        ],
+        link: 'https://cryptocurrentapp.netlify.app/',
+        codigo: 'https://github.com/dabadema/React-y-Typescript/tree/main/crypto-react-typescript',
+        image: './projects/crypto_screenshot_reduced.webp',
+        tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWINDCSS, TAGS.ZOD, TAGS.VITE],
+    },
+    {
+        title: 'Administrador de productos',
+        description: [
+            'Un simple administrador de productos con control de disponibilidad y posibilidad de escalabilidad hacia control de stock como agregar, editar y eliminar productos.',
+        ],
+        link: 'https://product-manager-frontend-omega.vercel.app/',
+        frontend: 'https://github.com/dabadema/Product_manager_frontend',
+        backend: 'https://github.com/dabadema/Product_manager_backend',
+        image: './projects/Administrador_Productos_mock.webp',
+        tags: [
+            TAGS.REACT,
+            TAGS.TYPESCRIPT,
+            TAGS.TAILWINDCSS,
+            TAGS.REACTROUTER,
+            TAGS.NODE,
+            TAGS.EXPRESS,
+            TAGS.POSTGRESQL,
+            TAGS.VERCEL,
+            TAGS.ZOD,
+            TAGS.VITE,
+        ],
     },
 ];
 ---
 
-<div class="flex flex-col gap-y-24">
-  {
-    PROJECTS.map(
-      ({ image,  image2, title, description, tags, link, backend, frontend, codigo, }) => (
-        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-          <div class="w-full md:w-1/2 flex flex-col gap-4">
-            {/* Tarjeta para la primera imagen */}
-            <div class="relative flex flex-col items-center transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-              <img
-                alt="Foto 1"
-                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-                loading="lazy"
-                src={image}
-              />
-            </div>
+<div class="flex flex-col gap-y-16">
+    {
+        PROJECTS.map(
+            ({ image, image2, title, description, tags, link, backend, frontend, codigo }) => (
+                <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+                    <div class="w-full md:w-1/2 flex flex-col gap-4">
+                        {/* Tarjeta para la primera imagen */}
+                        <div class="relative flex flex-col items-center transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                            <img
+                                alt="Foto 1"
+                                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                                loading="lazy"
+                                src={image}
+                            />
+                        </div>
 
-            {/* Tarjeta para la segunda imagen (si existe) */}
-            {image2 && (
-              <div class="relative flex flex-col items-center transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-                <img
-                  alt="Foto 2"
-                  class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-                  loading="lazy"
-                  src={image2}
-                />
-              </div>
-            )}
-          </div>
+                        {/* Tarjeta para la segunda imagen (si existe) */}
+                        {image2 && (
+                            <div class="relative flex flex-col items-center transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                                <img
+                                    alt="Foto 2"
+                                    class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                                    loading="lazy"
+                                    src={image2}
+                                />
+                            </div>
+                        )}
+                    </div>
 
-          <div class="w-full md:w-1/2 md:max-w-lg ">
-            <h3 class=" text-2xl font-bold text-gray-800 dark:text-gray-100">
-              {title}
-            </h3>
-            <div class="flex flex-wrap mt-2">
-              <div class="mt-2 text-gray-700 dark:text-gray-400 text-justify">
-                {description.map((paragraph) => (
-                  <p>
-                    {paragraph === 'Tecnologías Utilizadas:' ? (
-                      <strong>{paragraph}</strong>
-                    ) : paragraph === 'Backend:' ? (
-                      <strong>{paragraph}</strong>
-                    ) : paragraph === 'Frontend:' ? (
-                      <strong>{paragraph}</strong>
-                    ) : (
-                      paragraph
-                    )}
-                  </p>
-                ))}
-              </div>
-              <ul class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-4">
-                {tags.map((tag) => (
-                  <li>
-                    <span
-                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                    >
-                      <tag.icon class="size-4" />
-                      {tag.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+                    <div class="w-full md:w-1/2 md:max-w-lg ">
+                        <h3 class=" text-2xl font-bold text-gray-800 dark:text-gray-100">
+                            {title}
+                        </h3>
+                        <div class="flex flex-wrap mt-2">
+                            <div class="mt-2 text-gray-700 dark:text-gray-400 text-justify">
+                                {description.map((paragraph) => (
+                                    <p>
+                                        {paragraph === 'Tecnologías Utilizadas:' ? (
+                                            <strong>{paragraph}</strong>
+                                        ) : paragraph === 'Backend:' ? (
+                                            <strong>{paragraph}</strong>
+                                        ) : paragraph === 'Frontend:' ? (
+                                            <strong>{paragraph}</strong>
+                                        ) : (
+                                            paragraph
+                                        )}
+                                    </p>
+                                ))}
+                            </div>
+                            <ul class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-4">
+                                {tags.map((tag) => (
+                                    <li>
+                                        <span
+                                            class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                                        >
+                                            <tag.icon class="size-4" />
+                                            {tag.name}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
 
-              
-              <footer class="flex items-end justify-start mt-4 gap-x-4">
-                {backend && (
-                  <LinkButton href={backend}>
-                    <GitHub class="size-6" />
-                    Backend
-                  </LinkButton>
-                )}
+                            <footer class="flex items-end justify-start mt-4 gap-x-4">
+                                {backend && (
+                                    <LinkButton href={backend} class="hover:text-yellow-500">
+                                        <GitHub class="size-6 hover:text-yellow-500" />
+                                        Backend
+                                    </LinkButton>
+                                )}
 
-                {codigo && (
-                  <LinkButton href={codigo}>
-                    <GitHub class="size-5" />
-                    Código
-                  </LinkButton>
-                )}
+                                {codigo && (
+                                    <LinkButton href={codigo}>
+                                        <GitHub class="size-5" />
+                                        Código
+                                    </LinkButton>
+                                )}
 
-                {frontend && (
-                  <LinkButton href={frontend}>
-                    <GitHub class="size-5" />
-                    Frontend
-                  </LinkButton>
-                )}
+                                {frontend && (
+                                    <LinkButton href={frontend}>
+                                        <GitHub class="size-5" />
+                                        Frontend
+                                    </LinkButton>
+                                )}
 
-                {link && (
-                  <LinkButton href={link}>
-                    <Link class="size-4" />
-                    Vista previa
-                  </LinkButton>
-                )}
-              </footer>
-            </div>
-          </div>
-        </article>
-      ),
-    )
-  }
+                                {link && (
+                                    <LinkButton href={link}>
+                                        <Link class="size-4" />
+                                        Vista previa
+                                    </LinkButton>
+                                )}
+                            </footer>
+                        </div>
+                    </div>
+                </article>
+            )
+        )
+    }
 </div>
