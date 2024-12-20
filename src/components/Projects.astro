@@ -151,16 +151,6 @@ const PROJECTS: Project[] = [
     //   backend: "https://github.com/Casglez3/App-peliculas-backend",
     // },
     {
-        title: 'CryptoCurrent App',
-        description: [
-            'Comprueba el precio actual de las criptomonedas más populares del mercado en tiempo real en cualquiera de las divisas mas populares del mundo.',
-        ],
-        link: 'https://cryptocurrentapp.netlify.app/',
-        codigo: 'https://github.com/dabadema/React-y-Typescript/tree/main/crypto-react-typescript',
-        image: './projects/crypto_screenshot_reduced.webp',
-        tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWINDCSS, TAGS.ZOD, TAGS.VITE],
-    },
-    {
         title: 'Administrador de productos',
         description: [
             'Un simple administrador de productos con control de disponibilidad y posibilidad de escalabilidad hacia control de stock como agregar, editar y eliminar productos.',
@@ -181,6 +171,16 @@ const PROJECTS: Project[] = [
             TAGS.ZOD,
             TAGS.VITE,
         ],
+    },
+    {
+        title: 'CryptoCurrent App',
+        description: [
+            'Comprueba el precio actual de las criptomonedas más populares del mercado en tiempo real en cualquiera de las divisas mas populares del mundo.',
+        ],
+        link: 'https://cryptocurrentapp.netlify.app/',
+        codigo: 'https://github.com/dabadema/React-y-Typescript/tree/main/crypto-react-typescript',
+        image: './projects/crypto_screenshot_reduced.webp',
+        tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWINDCSS, TAGS.ZOD, TAGS.VITE],
     },
 ];
 ---
@@ -272,7 +272,7 @@ const PROJECTS: Project[] = [
                                 {link && (
                                     <LinkButton href={link}>
                                         <Link class="size-4" />
-                                        Vista previa
+                                        Enlace
                                     </LinkButton>
                                 )}
                             </footer>
