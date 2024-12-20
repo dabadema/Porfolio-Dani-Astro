@@ -1,123 +1,128 @@
 ---
-const personalImageAlt = "Daniel Baena"
-import LinkedInIcon from "../components/icons/LinkedIn.astro";
-import MailIcon from "../components/icons/Mail.astro";
-import SocialPill from "../components/SocialPill.astro";
-import GitHubIcon from "./icons/GitHubIcon.astro";
+const personalImageAlt = 'Daniel Baena';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import MailIcon from '../components/icons/Mail.astro';
+import SocialPill from '../components/SocialPill.astro';
+import GitHubIcon from './icons/GitHubIcon.astro';
 ---
 
 <div class="max-w-xl mb-16">
-  <div class="flex gap-4 mb-4 justify-center">
-    <img
-      class="rounded-full shadow-lg size-40"
-      src="/Perfil-DBM_optimized.webp"
-      alt={personalImageAlt}
-    />
-    <a
-      href="https://www.linkedin.com/in/dbaenademadariaga/"
-      target="_blank"
-      rel="noopener"
-      class="flex items-center transition 
+    <div class="flex gap-4 mb-4 justify-center">
+        <img
+            class="rounded-full shadow-lg size-40"
+            src="/Perfil-DBM_optimized.webp"
+            alt={personalImageAlt}
+        />
+        <a
+            href="https://www.linkedin.com/in/dbaenademadariaga/"
+            target="_blank"
+            rel="noopener"
+            class="flex items-center transition
       md:justify-center md:hover:scale-105"
+        >
+            <!-- <Badge>Preparado para ayudarte!</Badge> -->
+        </a>
+    </div>
+    <h1
+        class="text-4xl text-center font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
     >
-      <!-- <Badge>Preparado para ayudarte!</Badge> -->
-    </a>
-  </div>
-  <h1
-    class="text-4xl text-center font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-  >
-    <span id="typewriter"></span> 
-  </h1>
-  <p
-    class="mt-6 text-xl text-gray-800 text-pretty text-center
-    dark:[&>strong]:text-yellow-200  dark:text-gray-300
+        <span id="typewriter"></span>
+    </h1>
+    <p
+        class="mt-6 text-xl text-gray-800 text-pretty text-center
+    dark:[&>strong]:text-yellow-200 dark:text-gray-300
     [&>strong]:text-yellow-500 [&>strong]:font-semibold"
-  >
-    Entusiasta apasionado del mundo de las tecnologías. 
-    <strong>Programador Web y Gestor de proyectos,</strong
-    > de Sevilla, España. Trabajo en equipo, servicio y calidad como valores.
-  </p>
-  <nav class="flex flex-wrap gap-3 mt-6 justify-center">
-    <SocialPill href="https://www.linkedin.com/in/dbaenademadariaga/">
-      <LinkedInIcon class="size-4" />
-      LinkedIn
-    </SocialPill>
-    <SocialPill href="https://github.com/dbaenademadariaga">
-      <GitHubIcon class="size-4" />
-      GitHub
-    </SocialPill>
-    <SocialPill href="mailto:dabadema7@hotmail.com">
-      <MailIcon class="size-4" />
-      Email
-    </SocialPill>
-   
-  </nav>
+    >
+        Entusiasta apasionado del mundo de las tecnologías.
+        <strong>Programador Web y Gestor de proyectos,</strong> de Sevilla, España. Trabajo en equipo,
+        servicio y calidad como valores.
+    </p>
+    <nav class="flex flex-wrap gap-3 mt-6 justify-center">
+        <SocialPill href="https://www.linkedin.com/in/dbaenademadariaga/">
+            <LinkedInIcon class="size-4" />
+            LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/dabadema">
+            <GitHubIcon class="size-4" />
+            GitHub
+        </SocialPill>
+        <SocialPill href="mailto:dabadema7@hotmail.com">
+            <MailIcon class="size-4" />
+            Email
+        </SocialPill>
+    </nav>
 </div>
 
 <style>
-  @keyframes blink {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-  }
+    @keyframes blink {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
 
-  #typewriter::after {
-    content: '|';
-    animation: blink 0.9s infinite;
-  }
+    #typewriter::after {
+        content: '|';
+        animation: blink 0.9s infinite;
+    }
 </style>
 <script>
-  function typeWriter(text: string, i: number = 0, stage: number = 0) {
-    const typewriterElement = document.getElementById("typewriter");
-    if (!typewriterElement) return;
+    function typeWriter(text: string, i: number = 0, stage: number = 0) {
+        const typewriterElement = document.getElementById('typewriter');
+        if (!typewriterElement) return;
 
-    const correctPrefix = "Hola, soy Da";
-    const mistakeText = "badem...?";
-    const fullText = text;
+        const correctPrefix = 'Hola, soy Da';
+        const mistakeText = 'badem...?';
+        const fullText = text;
 
-    // Function to write the intro like a typewriter
-    switch (stage) {
-      case 0: 
-        if (i < correctPrefix.length) {
-          typewriterElement.textContent = correctPrefix.slice(0, i + 1);
-          i++;
-          setTimeout(() => typeWriter(text, i, 0), 100);
-        } else {
-          setTimeout(() => typeWriter(text, 0, 1), 100);
+        // Function to write the intro like a typewriter
+        switch (stage) {
+            case 0:
+                if (i < correctPrefix.length) {
+                    typewriterElement.textContent = correctPrefix.slice(0, i + 1);
+                    i++;
+                    setTimeout(() => typeWriter(text, i, 0), 100);
+                } else {
+                    setTimeout(() => typeWriter(text, 0, 1), 100);
+                }
+                break;
+
+            case 1:
+                if (i < mistakeText.length) {
+                    typewriterElement.textContent = correctPrefix + mistakeText.slice(0, i + 1);
+                    i++;
+                    setTimeout(() => typeWriter(text, i, 1), 100);
+                } else {
+                    setTimeout(() => typeWriter(text, mistakeText.length, 2), 1000);
+                }
+                break;
+
+            case 2:
+                if (i > 0) {
+                    typewriterElement.textContent = correctPrefix + mistakeText.slice(0, i - 1);
+                    i--;
+                    setTimeout(() => typeWriter(text, i, 2), 50);
+                } else {
+                    setTimeout(() => typeWriter(text, correctPrefix.length, 3), 200);
+                }
+                break;
+
+            case 3:
+                if (i < fullText.length) {
+                    typewriterElement.textContent = fullText.slice(0, i + 1);
+                    i++;
+                    setTimeout(() => typeWriter(text, i, 3), 100);
+                }
+                break;
         }
-        break;
-
-      case 1: 
-        if (i < mistakeText.length) {
-          typewriterElement.textContent = correctPrefix + mistakeText.slice(0, i + 1);
-          i++;
-          setTimeout(() => typeWriter(text, i, 1), 100);
-        } else {
-          setTimeout(() => typeWriter(text, mistakeText.length, 2), 1000);
-        }
-        break;
-
-      case 2:
-        if (i > 0) {
-          typewriterElement.textContent = correctPrefix + mistakeText.slice(0, i - 1);
-          i--;
-          setTimeout(() => typeWriter(text, i, 2), 50);
-        } else {
-          setTimeout(() => typeWriter(text, correctPrefix.length, 3), 200);
-        }
-        break;
-
-      case 3: 
-        if (i < fullText.length) {
-          typewriterElement.textContent = fullText.slice(0, i + 1);
-          i++;
-          setTimeout(() => typeWriter(text, i, 3), 100);
-        }
-        break;
     }
-  }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    typeWriter("Hola, soy Dani!");
-  });
+    document.addEventListener('DOMContentLoaded', () => {
+        typeWriter('Hola, soy Dani!');
+    });
 </script>
