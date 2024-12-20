@@ -29,7 +29,7 @@ const navItems = [
 <header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
     <!-- Contenedor principal -->
     <div
-        class="flex items-center justify-between w-[60%] max-w-screen-lg px-4 rounded-full animate-nav-blur"
+        class="flex items-center justify-between w-[70%] max-w-screen-lg px-4 rounded-full animate-nav-blur"
     >
         <!-- Grupo del logo -->
         <div class="w-20 flex items-center justify-start">
@@ -55,7 +55,6 @@ const navItems = [
                         </a>
                     ))
                 }
-                <ThemeToggle />
             </nav>
 
             <!-- Menú desplegable y botón para pantallas pequeñas -->
@@ -67,19 +66,19 @@ const navItems = [
                     aria-label="Toggle menu"
                 >
                     <span
-                        class="menu-icon block w-5 h-5 bg-center bg-no-repeat bg-contain transition-transform"
+                        class="menu-icon block w-5 h-5 bg-center bg-no-repeat bg-contain transition-transform hover:text-yellow-400"
                     ></span>
                 </button>
 
                 <nav
                     id="dropdown-menu"
-                    class="hidden absolute top-14 right-4 w-30 bg-gray-200 dark:bg-gray-800
-              rounded-lg"
+                    class="hidden absolute top-10 right-14 w-30 bg-gray-200 dark:bg-gray-800
+              rounded-xl"
                 >
                     {
                         navItems.map((link) => (
                             <a
-                                class="block px-4 py-2 text-gray-600  hover:text-yellow-500 hover:bg-white/30 hover:rounded-full 
+                                class="block px-4 py-2 dark:text-white hover:text-yellow-500 hover:bg-white/30 hover:rounded-full 
              dark:hover:text-yellow-400 "
                                 aria-label={link.label}
                                 href={link.url}
@@ -90,6 +89,7 @@ const navItems = [
                     }
                 </nav>
             </div>
+            <ThemeToggle />
         </div>
     </div>
 </header>
