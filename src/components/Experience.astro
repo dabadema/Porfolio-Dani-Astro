@@ -1,7 +1,7 @@
 ---
-import ExperienceItem from "../components/ExperienceItem.astro";
-const EXPERIENCIE = [
-{
+import ExperienceItem from '../components/ExperienceItem.astro';
+const EXPERIENCE = [
+    {
         title: 'Desarrollador Full Stack',
         description:
             'Programación de funcionalidades y mantenimiento de la aplicación web, tanto backend como frontend. Gestión de la infraestructura en la nube y la base de datos.',
@@ -10,8 +10,8 @@ const EXPERIENCIE = [
         company: {
             name: 'Arca Digital',
             logo: '/IMAGOTIPO_VERDE_1.png',
-            logoHeight: 'h-5'
-        }
+            logoHeight: 'h-5',
+        },
     },
     {
         title: 'Gerente de pais India',
@@ -21,8 +21,8 @@ const EXPERIENCIE = [
         company: {
             name: 'Alfran',
             logo: '/logo-alfran.png',
-            logoHeight: 'h-6'
-        }
+            logoHeight: 'h-6',
+        },
     },
     {
         title: 'Gestor de proyectos',
@@ -32,20 +32,18 @@ const EXPERIENCIE = [
         company: {
             name: 'Alfran',
             logo: '/logo-alfran.png',
-            logoHeight: 'h-6'
-        }
+            logoHeight: 'h-6',
+        },
     },
-]
+];
 ---
 
 <ol class="relative mt-16">
-  {
-    EXPERIENCIE.map((experiencie) => (
-      <li class="">
-        <ExperienceItem {...experiencie} />
-      </li>
-    ))
-  }
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
 </ol>
-
-
