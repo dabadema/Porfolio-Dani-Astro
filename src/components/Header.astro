@@ -2,29 +2,30 @@
 import DBIcon from './icons/DBIcon.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import LanguageSelector from './LanguageSelector.astro';
-import { getI18N } from '../i18n/utils';
-
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+import es from '../i18n/es.json';
 
 const navItems = [
     {
-        title: 'Experiencia',
+        title: es.nav.experience,
+        key: 'nav.experience',
         label: 'experiencia',
         url: '#experiencia',
     },
     {
-        title: 'Proyectos',
+        title: es.nav.projects,
+        key: 'nav.projects',
         label: 'proyectos',
         url: '#proyectos',
     },
     {
-        title: 'Sobre mí',
+        title: es.nav.about,
+        key: 'nav.about',
         label: 'sobre-mi',
         url: '#sobre-mi',
     },
     {
-        title: 'Contacto',
+        title: es.nav.contact,
+        key: 'nav.contact',
         label: 'contacto',
         url: '#contacto',
     },
@@ -55,6 +56,7 @@ const navItems = [
              dark:hover:text-yellow-400"
                             aria-label={link.label}
                             href={link.url}
+                            data-i18n-key={link.key}
                         >
                             {link.title}
                         </a>
@@ -87,6 +89,7 @@ const navItems = [
              dark:hover:text-yellow-400 "
                                 aria-label={link.label}
                                 href={link.url}
+                                data-i18n-key={link.key}
                             >
                                 {link.title}
                             </a>
