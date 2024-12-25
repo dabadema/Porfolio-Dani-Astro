@@ -1,0 +1,62 @@
+---
+const currentLanguage =
+    typeof localStorage !== 'undefined' ? localStorage.getItem('language') || 'es' : 'es';
+---
+
+<button
+    id="language-toggle"
+    class="ml-1 mr-1 appearance-none border-none flex transition rounded-full p-1.5
+  hover:scale-110 hover:text-yellow-500 hover:bg-white/20"
+    aria-label="Cambiar idioma"
+>
+    <span id="current-language" class="text-sm font-medium">ES</span>
+</button>
+
+<script>
+    import es from '../i18n/es.json';
+    import en from '../i18n/en.json';
+
+    const translations = { es, en };
+    const languageToggle = document.getElementById('language-toggle');
+    const currentLanguageSpan = document.getElementById('current-language');
+
+    const updateButtonText = () => {
+        const currentLang = localStorage.getItem('language') || 'es';
+        if (currentLanguageSpan) {
+            currentLanguageSpan.textContent = currentLang.toUpperCase();
+        }
+    };
+
+    const updateTexts = () => {
+        const currentLang = localStorage.getItem('language') || 'es';
+        const currentTranslations = translations[currentLang as keyof typeof translations];
+
+        document.querySelectorAll('[data-i18n-key]').forEach((element) => {
+            const key = element.getAttribute('data-i18n-key');
+            if (key) {
+                try {
+                    const value = key
+                        .split('.')
+                        .reduce((obj: any, k) => obj?.[k], currentTranslations);
+                    if (value) {
+                        element.textContent = value;
+                    }
+                } catch (error) {
+                    console.warn(`Translation key not found: ${key}`);
+                }
+            }
+        });
+    };
+
+    // Inicializar
+    updateButtonText();
+    updateTexts();
+
+    languageToggle?.addEventListener('click', () => {
+        const currentLang = localStorage.getItem('language') || 'es';
+        const newLanguage = currentLang === 'es' ? 'en' : 'es';
+        localStorage.setItem('language', newLanguage);
+        updateButtonText();
+        updateTexts();
+    });
+</script>
