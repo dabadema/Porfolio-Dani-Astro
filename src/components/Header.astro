@@ -1,6 +1,11 @@
 ---
 import DBIcon from './icons/DBIcon.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import LanguageSelector from './LanguageSelector.astro';
+import { getI18N } from '../i18n/utils';
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
 const navItems = [
     {
@@ -72,13 +77,13 @@ const navItems = [
 
                 <nav
                     id="dropdown-menu"
-                    class="hidden absolute top-10 right-14 w-30 bg-gray-200 dark:bg-gray-800
+                    class="hidden absolute top-10 left-35 w-30 bg-gray-200 dark:bg-gray-800
               rounded-xl"
                 >
                     {
                         navItems.map((link) => (
                             <a
-                                class="block px-4 py-2 dark:text-white hover:text-yellow-500 hover:bg-white/30 hover:rounded-full 
+                                class="block px-4 py-2 text-sm dark:text-white hover:text-yellow-500 hover:bg-white/30 hover:rounded-full 
              dark:hover:text-yellow-400 "
                                 aria-label={link.label}
                                 href={link.url}
@@ -89,6 +94,9 @@ const navItems = [
                     }
                 </nav>
             </div>
+        </div>
+        <div class="flex items-center justify-center">
+            <LanguageSelector />
             <ThemeToggle />
         </div>
     </div>
