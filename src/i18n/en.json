@@ -1,0 +1,28 @@
+{
+    "SEO": {
+        "title": "Dani's Portfolio - Web Developer and Project Manager",
+        "description": "Passionate about software development, with solid knowledge in front-end and back-end technologies. Specialized in project management and modern web application development."
+    },
+    "nav": {
+        "experience": "Experience",
+        "projects": "Projects",
+        "about": "About me",
+        "contact": "Contact"
+    },
+    "hero": {
+        "greeting": "Hi, I'm Dani!",
+        "role": "Passionate about technologies.",
+        "description": "Engineer, Developer and Project Manager.",
+        "values": "Teamwork, service and quality as values."
+    },
+    "sections": {
+        "experience": "Work Experience",
+        "projects": "Projects",
+        "about": "About me",
+        "contact": "Contact"
+    },
+    "footer": {
+        "rights": "Some rights reserved.",
+        "top": "Top"
+    }
+}
