@@ -1,0 +1,28 @@
+{
+    "SEO": {
+        "title": "Porfolio de Dani - Desarrollador y programador Web - Gestor de proyectos",
+        "description": "Apasionado del desarrollo de software, con sólidos conocimientos en tecnologías front-end y back-end. Especializado en la gestión de proyectos y la creación de aplicaciones web modernas."
+    },
+    "nav": {
+        "experience": "Experiencia",
+        "projects": "Proyectos",
+        "about": "Sobre mí",
+        "contact": "Contacto"
+    },
+    "hero": {
+        "greeting": "Hola, soy Dani!",
+        "role": "Apasionado del mundo de las tecnologías.",
+        "description": "Ingeniero, Programador y Gestor de proyectos.",
+        "values": "Trabajo en equipo, servicio y calidad como valores."
+    },
+    "sections": {
+        "experience": "Experiencia laboral",
+        "projects": "Proyectos",
+        "about": "Sobre mí",
+        "contact": "Contacto"
+    },
+    "footer": {
+        "rights": "Algunos derechos reservados.",
+        "top": "Inicio"
+    }
+}
