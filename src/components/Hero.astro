@@ -81,7 +81,7 @@ const personalImageAlt = 'Daniel Baena';
         animation: blink 0.9s infinite;
     }
 </style>
-<script define:vars={{ es, en }}>
+<script is:inline define:vars={{ es, en }}>
     function getInitialLanguage() {
         const storedLanguage = localStorage.getItem('language');
         if (storedLanguage) return storedLanguage;

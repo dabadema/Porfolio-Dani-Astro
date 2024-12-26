@@ -6,7 +6,7 @@ const i18n = getI18N({ currentLocale: 'es' });
 
 const JOBS = ['fullstack', 'india', 'project'];
 
-const EXPERIENCE = JOBS.map((jobKey, index) => ({
+const EXPERIENCE = JOBS.map((jobKey) => ({
     title: i18n.experience.jobs[jobKey as keyof typeof i18n.experience.jobs].title,
     description: i18n.experience.jobs[jobKey as keyof typeof i18n.experience.jobs].description,
     date: i18n.experience.jobs[jobKey as keyof typeof i18n.experience.jobs].date,
