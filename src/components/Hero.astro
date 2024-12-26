@@ -1,10 +1,16 @@
 ---
-const personalImageAlt = 'Daniel Baena';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import MailIcon from '../components/icons/Mail.astro';
 import SocialPill from '../components/SocialPill.astro';
 import GitHubIcon from './icons/GitHubIcon.astro';
 import Linktree from './icons/Linktree.astro';
+import es from '../i18n/es.json';
+import en from '../i18n/en.json';
+
+const personalImageAlt = 'Daniel Baena';
+const { currentLocale } = Astro;
+console.log('URL actual:', Astro.url.pathname);
+console.log('Locale detectado:', currentLocale);
 ---
 
 <div class="max-w-xl mb-16">
@@ -76,24 +82,43 @@ import Linktree from './icons/Linktree.astro';
         animation: blink 0.9s infinite;
     }
 </style>
-<script>
-    function typeWriter(text: string, i: number = 0, stage: number = 0) {
+<script define:vars={{ es, en }}>
+    function getInitialLanguage() {
+        // Si ya hay un idioma guardado en localStorage, usamos ese
+        const storedLanguage = localStorage.getItem('language');
+        if (storedLanguage) return storedLanguage;
+
+        // Si no hay idioma guardado, detectamos el del navegador
+        const browserLang = navigator.language.toLowerCase().split('-')[0];
+        const defaultLanguage = browserLang === 'es' ? 'es' : 'en';
+
+        // Guardamos el idioma detectado en localStorage
+        localStorage.setItem('language', defaultLanguage);
+        return defaultLanguage;
+    }
+
+    function getTranslations() {
+        const language = getInitialLanguage();
+        return language === 'es' ? es : en;
+    }
+
+    function typeWriter(i = 0, stage = 0) {
+        const translations = getTranslations();
         const typewriterElement = document.getElementById('typewriter');
         if (!typewriterElement) return;
 
-        const correctPrefix = 'Hola, soy Da';
-        const mistakeText = 'badem...?';
-        const fullText = text;
+        const correctPrefix = translations.typewriter.prefix;
+        const mistakeText = translations.typewriter.mistake;
+        const fullText = translations.typewriter.final;
 
-        // Function to write the intro like a typewriter
         switch (stage) {
             case 0:
                 if (i < correctPrefix.length) {
                     typewriterElement.textContent = correctPrefix.slice(0, i + 1);
                     i++;
-                    setTimeout(() => typeWriter(text, i, 0), 100);
+                    setTimeout(() => typeWriter(i, 0), 100);
                 } else {
-                    setTimeout(() => typeWriter(text, 0, 1), 100);
+                    setTimeout(() => typeWriter(0, 1), 100);
                 }
                 break;
 
@@ -101,9 +126,9 @@ import Linktree from './icons/Linktree.astro';
                 if (i < mistakeText.length) {
                     typewriterElement.textContent = correctPrefix + mistakeText.slice(0, i + 1);
                     i++;
-                    setTimeout(() => typeWriter(text, i, 1), 100);
+                    setTimeout(() => typeWriter(i, 1), 100);
                 } else {
-                    setTimeout(() => typeWriter(text, mistakeText.length, 2), 1000);
+                    setTimeout(() => typeWriter(mistakeText.length, 2), 1000);
                 }
                 break;
 
@@ -111,9 +136,9 @@ import Linktree from './icons/Linktree.astro';
                 if (i > 0) {
                     typewriterElement.textContent = correctPrefix + mistakeText.slice(0, i - 1);
                     i--;
-                    setTimeout(() => typeWriter(text, i, 2), 50);
+                    setTimeout(() => typeWriter(i, 2), 50);
                 } else {
-                    setTimeout(() => typeWriter(text, correctPrefix.length, 3), 200);
+                    setTimeout(() => typeWriter(correctPrefix.length, 3), 200);
                 }
                 break;
 
@@ -121,13 +146,13 @@ import Linktree from './icons/Linktree.astro';
                 if (i < fullText.length) {
                     typewriterElement.textContent = fullText.slice(0, i + 1);
                     i++;
-                    setTimeout(() => typeWriter(text, i, 3), 100);
+                    setTimeout(() => typeWriter(i, 3), 100);
                 }
                 break;
         }
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        typeWriter('Hola, soy Dani!');
+        typeWriter();
     });
 </script>
