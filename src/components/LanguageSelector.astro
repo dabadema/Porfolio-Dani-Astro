@@ -58,5 +58,21 @@ const currentLanguage =
         localStorage.setItem('language', newLanguage);
         updateButtonText();
         updateTexts();
+
+        // Reinicio completo
+        const typewriterElement = document.getElementById('typewriter');
+        if (typewriterElement) {
+            // Limpiar el elemento
+            typewriterElement.textContent = '';
+
+            // Forzar un reflow del DOM
+            void typewriterElement.offsetHeight;
+
+            // Reiniciar la animación después de un pequeño delay
+            setTimeout(() => {
+                const event = new Event('DOMContentLoaded');
+                document.dispatchEvent(event);
+            }, 100);
+        }
     });
 </script>
