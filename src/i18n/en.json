@@ -33,5 +33,12 @@
         "prefix": "Hi, I'm Da",
         "mistake": "badem...?",
         "final": "Hi, I'm Dani!"
+    },
+    "contact": {
+        "name": "Name",
+        "email": "Email",
+        "message": "How can I help you?",
+        "send": "Send",
+        "required": "Please complete all fields before submitting the form."
     }
 }
