@@ -1,41 +1,64 @@
 ---
-const personalImageAlt = "Dani";
+import { getI18N } from '../i18n/utils';
+
+const i18n = getI18N({ currentLocale: 'es' });
+const personalImageAlt = 'Dani';
 ---
 
 <article
-  class="flex flex-col items-center justify-center gap-8 
-  text-gray-700 
-  dark:text-gray-300 
+    class="flex flex-col items-center justify-center gap-8
+  text-gray-700
+  dark:text-gray-300
   md:flex-row"
 >
-  <div
-    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 mt-1000 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1 [&>p]:text-justify"
-  >
-    <p>
-      Hace ya un par de años... surgió mi interés por la programación, ya que estoy a la vanguardia tecnológica,
-      sumado a los apasionantes proyectos tecnológicos en los que colaboraban personas de mi circulo cercano. Esto 
-      despertaró mi curiosidad e inquietud, lo que me impulsó a acercarme  a este sector, empezando como autodidacta y pasando 
-      por formación académica para apostar por un giro en mi trayectoria profesional.
-    </p>
-    <p>
-      Fascinado por la capacidad del software para crear soluciones innovadoras 
-      que impactan directamente en nuestro día a día. He tenido la oportunidad de trabajar en proyectos 
-      que van desde aplicaciones web hasta herramientas que automatizan procesos, disfrutando siempre
-      del proceso creativo y del aprendizaje continuo que aportan los retos singulares de cada proyecto.
-    </p>
-    <p>
-      Desde entonces, me encuentro en constante aprendizaje de nuevas tecnologías y sistemas, con el objetivo de mejorar
-      mis habilidades y ser más productivo, pudiendo así aportar el máximo valor en cada interacción en la que participo. Motivado a 
-      la resolución de problemas, enfocado en seguir creciendo profesionalmente y comprometido con hacer de este mundo un lugar mejor para todos.
-    </p>
-  </div>
+    <div
+        class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 mt-1000 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1 [&>p]:text-justify"
+    >
+        <p data-i18n-key="about.paragraphs.first">
+            {i18n.about.paragraphs.first}
+        </p>
+        <p data-i18n-key="about.paragraphs.second">
+            {i18n.about.paragraphs.second}
+        </p>
+        <p data-i18n-key="about.paragraphs.third">
+            {i18n.about.paragraphs.third}
+        </p>
+    </div>
 
-  <img
-    width="200"
-    height="200"
-    src="/aboutme_img.webp"
-    alt={personalImageAlt}
-    class="order-1 object-cover w-72 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
-    style="object-position: 50% 50%"
-  />
+    <img
+        width="200"
+        height="200"
+        src="/aboutme_img.webp"
+        alt={personalImageAlt}
+        class="order-1 object-cover w-72 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
+        style="object-position: 50% 50%"
+    />
 </article>
+
+<script>
+    // El script para actualizar el contenido cuando cambie el idioma
+    const updateAboutContent = () => {
+        const currentLocale = localStorage.getItem('language') || 'es';
+
+        // Importamos dinámicamente las traducciones
+        import(`../i18n/${currentLocale}.json`).then((translations) => {
+            const i18n = translations.default;
+
+            // Actualizamos cada párrafo
+            document.querySelectorAll('[data-i18n-key^="about.paragraphs."]').forEach((element) => {
+                const key = element.getAttribute('data-i18n-key');
+                if (key) {
+                    const keys = key.split('.');
+                    let value = i18n;
+                    keys.forEach((k) => {
+                        value = value[k];
+                    });
+                    element.textContent = value;
+                }
+            });
+        });
+    };
+
+    // Escuchamos cambios en el idioma
+    document.addEventListener('languageChanged', updateAboutContent);
+</script>

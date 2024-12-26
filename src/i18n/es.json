@@ -40,5 +40,12 @@
         "message": "¿Cómo puedo ayudarte?",
         "send": "Enviar",
         "required": "Por favor, completa todos los campos antes de enviar el formulario."
+    },
+    "about": {
+        "paragraphs": {
+            "first": "Hace ya un par de años... surgió mi interés por la programación, ya que estoy a la vanguardia tecnológica, sumado a los apasionantes proyectos tecnológicos en los que colaboraban personas de mi circulo cercano. Esto despertaró mi curiosidad e inquietud, lo que me impulsó a acercarme a este sector, empezando como autodidacta y pasando por formación académica para apostar por un giro en mi trayectoria profesional.",
+            "second": "Fascinado por la capacidad del software para crear soluciones innovadoras que impactan directamente en nuestro día a día. He tenido la oportunidad de trabajar en proyectos que van desde aplicaciones web hasta herramientas que automatizan procesos, disfrutando siempre del proceso creativo y del aprendizaje continuo que aportan los retos singulares de cada proyecto.",
+            "third": "Desde entonces, me encuentro en constante aprendizaje de nuevas tecnologías y sistemas, con el objetivo de mejorar mis habilidades y ser más productivo, pudiendo así aportar el máximo valor en cada interacción en la que participo. Motivado a la resolución de problemas, enfocado en seguir creciendo profesionalmente y comprometido con hacer de este mundo un lugar mejor para todos."
+        }
     }
 }

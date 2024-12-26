@@ -40,5 +40,12 @@
         "message": "How can I help you?",
         "send": "Send",
         "required": "Please complete all fields before submitting the form."
+    },
+    "about": {
+        "paragraphs": {
+            "first": "A couple of years ago... my interest in programming emerged, as I am at the forefront of technology, coupled with the exciting technological projects in which people from my close circle collaborated. This awakened my curiosity and restlessness, which led me to approach this sector, starting as self-taught and going through academic training to bet on a turn in my professional career.",
+            "second": "Fascinated by software's ability to create innovative solutions that directly impact our daily lives. I have had the opportunity to work on projects ranging from web applications to process automation tools, always enjoying the creative process and continuous learning that the unique challenges of each project bring.",
+            "third": "Since then, I have been constantly learning new technologies and systems, with the aim of improving my skills and being more productive, thus being able to provide maximum value in each interaction in which I participate. Motivated to solve problems, focused on continuing to grow professionally and committed to making this world a better place for everyone."
+        }
     }
 }
