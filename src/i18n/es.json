@@ -70,5 +70,25 @@
             }
         },
         "more": "Saber más"
+    },
+    "projects": {
+        "product_manager": {
+            "title": "Administrador de productos",
+            "description": [
+                "Una simple aplicación de administración de productos con control de disponibilidad y posibilidad de escalabilidad hacia control de stock como agregar, editar y eliminar productos."
+            ]
+        },
+        "cryptocurrent": {
+            "title": "CryptoCurrent App",
+            "description": [
+                "Comprueba el precio actual de las criptomonedas más populares del mercado en tiempo real en cualquiera de las divisas mas populares del mundo."
+            ]
+        },
+        "links": {
+            "backend": "Backend",
+            "frontend": "Frontend",
+            "code": "Código",
+            "link": "Enlace"
+        }
     }
 }

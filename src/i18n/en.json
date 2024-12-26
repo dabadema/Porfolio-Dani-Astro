@@ -70,5 +70,25 @@
             }
         },
         "more": "Learn more"
+    },
+    "projects": {
+        "product_manager": {
+            "title": "Product Manager",
+            "description": [
+                "A simple product manager application with availability control and scalability possibilities towards stock control such as adding, editing and deleting products."
+            ]
+        },
+        "cryptocurrent": {
+            "title": "CryptoCurrent App",
+            "description": [
+                "Check the current price of the most popular cryptocurrencies in the market in real time in any of the world's most popular currencies."
+            ]
+        },
+        "links": {
+            "backend": "Backend",
+            "frontend": "Frontend",
+            "code": "Code",
+            "link": "Link"
+        }
     }
 }
