@@ -5,11 +5,10 @@ const currentLanguage =
 
 <button
     id="language-toggle"
-    class="ml-1 mr-1 appearance-none border-none flex transition rounded-full p-1.5
-  hover:scale-110 hover:text-yellow-500 hover:bg-white/20"
-    aria-label="Cambiar idioma"
+    class="relative inline-flex items-center justify-center p-2 text-md font-semibold bg-black/5 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-all duration-200 hover:scale-110"
+    aria-label="Switch Language"
 >
-    <span id="current-language" class="text-sm font-medium">ES</span>
+    <span id="language-text">🇪🇸</span>
 </button>
 
 <script>
@@ -18,14 +17,14 @@ const currentLanguage =
 
     const translations = { es, en };
     const languageToggle = document.getElementById('language-toggle');
-    const currentLanguageSpan = document.getElementById('current-language');
+    const languageText = document.getElementById('language-text');
 
-    const updateButtonText = () => {
+    function updateButtonText() {
         const currentLang = localStorage.getItem('language') || 'es';
-        if (currentLanguageSpan) {
-            currentLanguageSpan.textContent = currentLang.toUpperCase();
+        if (languageText) {
+            languageText.textContent = currentLang === 'es' ? '🇪🇸' : '🇺🇸';
         }
-    };
+    }
 
     const updateTexts = () => {
         const currentLang = localStorage.getItem('language') || 'es';
@@ -48,7 +47,6 @@ const currentLanguage =
         });
     };
 
-    // Inicializar
     updateButtonText();
     updateTexts();
 
@@ -59,16 +57,11 @@ const currentLanguage =
         updateButtonText();
         updateTexts();
 
-        // Reinicio completo
         const typewriterElement = document.getElementById('typewriter');
         if (typewriterElement) {
-            // Limpiar el elemento
             typewriterElement.textContent = '';
-
-            // Forzar un reflow del DOM
             void typewriterElement.offsetHeight;
 
-            // Reiniciar la animación después de un pequeño delay
             setTimeout(() => {
                 const event = new Event('DOMContentLoaded');
                 document.dispatchEvent(event);
