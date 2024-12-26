@@ -10,7 +10,11 @@
         "contact": "Contact"
     },
     "hero": {
-        "greeting": "Hi, I'm Dani!",
+        "greeting": {
+            "prefix": "Hi, I'm Da",
+            "mistake": "badem...?",
+            "full": "Hi, I'm Dani!"
+        },
         "role": "Passionate about technologies.",
         "description": "Engineer, Developer and Project Manager.",
         "values": "Teamwork, service and quality as values."
@@ -24,5 +28,10 @@
     "footer": {
         "rights": "Some rights reserved.",
         "top": "Top"
+    },
+    "typewriter": {
+        "prefix": "Hi, I'm Da",
+        "mistake": "badem...?",
+        "final": "Hi, I'm Dani!"
     }
 }

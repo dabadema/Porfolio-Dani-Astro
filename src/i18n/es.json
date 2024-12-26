@@ -10,7 +10,11 @@
         "contact": "Contacto"
     },
     "hero": {
-        "greeting": "Hola, soy Dani!",
+        "greeting": {
+            "prefix": "Hola, soy Da",
+            "mistake": "badem...?",
+            "full": "Hola, soy Dani!"
+        },
         "role": "Apasionado del mundo de las tecnologías.",
         "description": "Ingeniero, Programador y Gestor de proyectos.",
         "values": "Trabajo en equipo, servicio y calidad como valores."
@@ -24,5 +28,10 @@
     "footer": {
         "rights": "Algunos derechos reservados.",
         "top": "Inicio"
+    },
+    "typewriter": {
+        "prefix": "Hola, soy Da",
+        "mistake": "badem...?",
+        "final": "Hola, soy Dani!"
     }
 }
