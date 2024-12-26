@@ -1,16 +1,22 @@
+---
+import { getI18N } from '../i18n/utils';
+
+const i18n = getI18N({ currentLocale: 'es' });
+---
+
 <footer class="rounded-3xl shadow bg-black/20 backdrop-blur-lg xl:w-[1040px] m-3 px-4 md:mx-auto">
-    <div
-        class="w-full max-w-screen-xl p-4 flex md:items-center justify-between "
-    >
-        <span class="text-sm sm:text-center text-yellow-100 "
-            >© 2024 <a href="https://www.linkedin.com/in/dbaenademadariaga/" class="hover:underline"
-                >Dani</a
-            >. Algunos derechos reservados.
+    <div class="w-full max-w-screen-xl p-4 flex md:items-center justify-between">
+        <span class="text-sm sm:text-center text-yellow-100"
+            >© 2024 <a
+                href="https://www.linkedin.com/in/dbaenademadariaga/"
+                class="hover:underline">Dani</a
+            >. <span data-i18n-key="footer.rights">{i18n.footer.rights}</span>
         </span>
-        <ul class="flex items-center text-sm font-medium text-white/90 dark:text-gray-400 sm:mt-0"
-        >   
+        <ul class="flex items-center text-sm font-medium text-white/90 dark:text-gray-400 sm:mt-0">
             <li class="">
-                <a href="#top" class="hover:underline">Inicio</a>
+                <a href="#top" class="hover:underline" data-i18n-key="footer.top"
+                    >{i18n.footer.top}</a
+                >
             </li>
         </ul>
     </div>
