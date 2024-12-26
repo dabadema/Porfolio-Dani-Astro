@@ -1,49 +1,58 @@
 ---
 import ExperienceItem from '../components/ExperienceItem.astro';
-const EXPERIENCE = [
-    {
-        title: 'Desarrollador Full Stack',
-        description:
-            'Programación de funcionalidades y mantenimiento de la aplicación web, tanto backend como frontend. Gestión de la infraestructura en la nube y la base de datos.',
-        date: 'Marzo 2024 / Actualmente...',
-        link: 'https://arcadigital.app',
-        company: {
-            name: 'Arca Digital',
-            logo: '/IMAGOTIPO_VERDE_1.png',
-            logoHeight: 'h-5',
-        },
+import { getI18N } from '../i18n/utils';
+
+const i18n = getI18N({ currentLocale: 'es' });
+
+const JOBS = ['fullstack', 'india', 'project'];
+
+const EXPERIENCE = JOBS.map((jobKey, index) => ({
+    title: i18n.experience.jobs[jobKey as keyof typeof i18n.experience.jobs].title,
+    description: i18n.experience.jobs[jobKey as keyof typeof i18n.experience.jobs].description,
+    date: i18n.experience.jobs[jobKey as keyof typeof i18n.experience.jobs].date,
+    link: jobKey === 'fullstack' ? 'https://arcadigital.app' : undefined,
+    company: {
+        name: jobKey === 'fullstack' ? 'Arca Digital' : 'Alfran',
+        logo: jobKey === 'fullstack' ? '/IMAGOTIPO_VERDE_1.png' : '/logo-alfran.png',
+        logoHeight: jobKey === 'fullstack' ? 'h-5' : 'h-6',
     },
-    {
-        title: 'Gerente de pais India',
-        description:
-            'Desarrollo de la Joint-Venture expatriado en India, seguimiento de la construcción de la planta de fabricación, transferencia del know-how tecnológico y adaptación del modelo de negocio de la compañia a la cultura local.',
-        date: 'Mayo 2022 / 1 año',
-        company: {
-            name: 'Alfran',
-            logo: '/logo-alfran.png',
-            logoHeight: 'h-6',
-        },
-    },
-    {
-        title: 'Gestor de proyectos',
-        description:
-            'Coordinación de recursos para la ejecución de proyectos industriales nacionales e internacionales, gestion de ofertas, certificaciones de obra y logística. Trabajo en equipos para el éxito de los proyectos.',
-        date: 'Enero 2020 / +3 años',
-        company: {
-            name: 'Alfran',
-            logo: '/logo-alfran.png',
-            logoHeight: 'h-6',
-        },
-    },
-];
+    index: jobKey,
+}));
 ---
 
 <ol class="relative mt-16">
     {
         EXPERIENCE.map((experience) => (
-            <li class="">
+            <li class="experience-item">
                 <ExperienceItem {...experience} />
             </li>
         ))
     }
 </ol>
+
+<script>
+    const updateExperienceContent = () => {
+        const currentLocale = localStorage.getItem('language') || 'es';
+
+        import(`../i18n/${currentLocale}.json`).then((translations) => {
+            const i18n = translations.default;
+
+            document.querySelectorAll('[data-i18n-key]').forEach((element) => {
+                const key = element.getAttribute('data-i18n-key');
+                if (!key) return;
+
+                const keys = key.split('.');
+                let value = i18n;
+                keys.forEach((k) => {
+                    value = value[k];
+                });
+
+                if (value) {
+                    element.textContent = value;
+                }
+            });
+        });
+    };
+
+    document.addEventListener('languageChanged', updateExperienceContent);
+</script>

@@ -47,5 +47,28 @@
             "second": "Fascinated by software's ability to create innovative solutions that directly impact our daily lives. I have had the opportunity to work on projects ranging from web applications to process automation tools, always enjoying the creative process and continuous learning that the unique challenges of each project bring.",
             "third": "Since then, I have been constantly learning new technologies and systems, with the aim of improving my skills and being more productive, thus being able to provide maximum value in each interaction in which I participate. Motivated to solve problems, focused on continuing to grow professionally and committed to making this world a better place for everyone."
         }
+    },
+    "experience": {
+        "jobs": {
+            "fullstack": {
+                "title": "Full Stack Developer",
+                "description": "Programming functionalities and maintenance of the web application, both backend and frontend. Management of cloud infrastructure and database.",
+                "date": "March 2024 / Currently...",
+                "company": "Arca Digital"
+            },
+            "india": {
+                "title": "Country Manager India",
+                "description": "Development of the Joint-Venture as an expatriate in India, monitoring of the manufacturing plant construction, transfer of technological know-how and adaptation of the company's business model to the local culture.",
+                "date": "May 2022 / 1 year",
+                "company": "Alfran"
+            },
+            "project": {
+                "title": "Project Manager",
+                "description": "Resource coordination for the execution of national and international industrial projects, bid management, work certifications and logistics. Team work for project success.",
+                "date": "January 2020 / +3 years",
+                "company": "Alfran"
+            }
+        },
+        "more": "Learn more"
     }
 }

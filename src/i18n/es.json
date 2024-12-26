@@ -47,5 +47,28 @@
             "second": "Fascinado por la capacidad del software para crear soluciones innovadoras que impactan directamente en nuestro día a día. He tenido la oportunidad de trabajar en proyectos que van desde aplicaciones web hasta herramientas que automatizan procesos, disfrutando siempre del proceso creativo y del aprendizaje continuo que aportan los retos singulares de cada proyecto.",
             "third": "Desde entonces, me encuentro en constante aprendizaje de nuevas tecnologías y sistemas, con el objetivo de mejorar mis habilidades y ser más productivo, pudiendo así aportar el máximo valor en cada interacción en la que participo. Motivado a la resolución de problemas, enfocado en seguir creciendo profesionalmente y comprometido con hacer de este mundo un lugar mejor para todos."
         }
+    },
+    "experience": {
+        "jobs": {
+            "fullstack": {
+                "title": "Desarrollador Full Stack",
+                "description": "Programación de funcionalidades y mantenimiento de la aplicación web, tanto backend como frontend. Gestión de la infraestructura en la nube y la base de datos.",
+                "date": "Marzo 2024 / Actualmente...",
+                "company": "Arca Digital"
+            },
+            "india": {
+                "title": "Gerente de país India",
+                "description": "Desarrollo de la Joint-Venture expatriado en India, seguimiento de la construcción de la planta de fabricación, transferencia del know-how tecnológico y adaptación del modelo de negocio de la compañia a la cultura local.",
+                "date": "Mayo 2022 / 1 año",
+                "company": "Alfran"
+            },
+            "project": {
+                "title": "Gestor de proyectos",
+                "description": "Coordinación de recursos para la ejecución de proyectos industriales nacionales e internacionales, gestion de ofertas, certificaciones de obra y logística. Trabajo en equipos para el éxito de los proyectos.",
+                "date": "Enero 2020 / +3 años",
+                "company": "Alfran"
+            }
+        },
+        "more": "Saber más"
     }
 }
