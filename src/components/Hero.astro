@@ -8,9 +8,6 @@ import es from '../i18n/es.json';
 import en from '../i18n/en.json';
 
 const personalImageAlt = 'Daniel Baena';
-const { currentLocale } = Astro;
-console.log('URL actual:', Astro.url.pathname);
-console.log('Locale detectado:', currentLocale);
 ---
 
 <div class="max-w-xl mb-16">
@@ -84,15 +81,12 @@ console.log('Locale detectado:', currentLocale);
 </style>
 <script define:vars={{ es, en }}>
     function getInitialLanguage() {
-        // Si ya hay un idioma guardado en localStorage, usamos ese
         const storedLanguage = localStorage.getItem('language');
         if (storedLanguage) return storedLanguage;
 
-        // Si no hay idioma guardado, detectamos el del navegador
         const browserLang = navigator.language.toLowerCase().split('-')[0];
         const defaultLanguage = browserLang === 'es' ? 'es' : 'en';
 
-        // Guardamos el idioma detectado en localStorage
         localStorage.setItem('language', defaultLanguage);
         return defaultLanguage;
     }
